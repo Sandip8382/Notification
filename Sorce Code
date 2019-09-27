@@ -1,0 +1,76 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="notifications.css" rel="stylesheet" />
+    <script src="notifications.js"></script>
+    <script>
+            
+                   
+          
+        
+    </script>
+    <script>
+        'use strict';
+        window.addEventListener('DOMContentLoaded', function () {
+            var form = document.querySelector('form');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+            });
+        });
+
+        function Ayaan() {
+                    // Form elements
+                    var title = "Ayaan";
+                    var message = "Ewlcome"
+                    var position = "nfc-bottom-right";
+                    var duration = "8000"
+                    var theme = "success";
+                    if (!message) {
+                        message = 'You did not enter a message...';
+                    }
+
+                    window.createNotification({
+                        positionClass: position,
+                        showDuration: duration,
+                        theme: theme
+                    })({
+                        title: title,
+                        message: message
+                    });
+                
+        }
+        function Sandip() {
+            // Form elements
+            var title = "Sandip";
+            var message = "Ewlcome"
+            var position = "nfc-top-right";
+            var duration = "2000"
+            var theme = "success";
+
+            if (!message) {
+                message = 'You did not enter a message...';
+            }
+
+            window.createNotification({
+                positionClass: position,
+                showDuration: duration,
+                theme: theme
+            })({
+                title: title,
+                message: message
+            });
+
+        }
+    </script>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:Button ID="Button2" runat="server" Text="Button"  OnClientClick="Ayaan();"/>
+        <asp:Button ID="Button1" runat="server" Text="Button" OnClientClick="Sandip();"/>
+    </div>
+    </form>
+</body>
+</html>
